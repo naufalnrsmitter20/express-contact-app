@@ -1,0 +1,21 @@
+
+    <% const Nav = [{ name: "Home", url: "/" }, {name: "About", url: "/about"}, {name: "Profile", url: "/profile"} ] %>
+    <div>
+        
+      
+      <h2>Hello, my Name is <%= myname %></h2>
+      <br />
+      <h4>List Nama Siswa</h4>
+      <% if (siswa.length <= 0) { %>
+        <p>Data Siswa Kosong</p>
+       <% } %> 
+      <ul>
+        <% siswa.forEach(e => { %>
+        <li>
+          <p>Nama : <%= e.nama %> - <span><%= e.kelas %> RPL 8</span></p>
+          <p>Jurusan : <%= e.jurusan  %></p>
+        </li>
+        <% }) %>
+      </ol>
+    </div>
+  

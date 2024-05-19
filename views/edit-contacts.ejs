@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <h2 class="my-2">Form Ubah Data Kontak</h2>
+      <% if (typeof errors != "undefined") { %>
+      <div class="alert alert-danger mt-3 fw-semibold" role="alert">
+        <ul>
+          <% errors.forEach(err => { %>
+          <li><%= err.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+
+      <% } %>
+      <form class="form-control border-warning px-3" action="/contact/update" method="post">
+        <input type="hidden" name="oldNama" value="<%= (contact.oldNama) ? contact.oldNama : contact.nama %>" />
+        <div class="my-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Nama" required value="<%= contact.nama %>" />
+        </div>
+        <div class="my-3">
+          <label for="nohp" class="form-label">Nomor HP</label>
+          <input type="number" class="form-control" name="nohp" id="nohp" placeholder="Masukkan nomor Hp" required value="<%= contact.nohp %>" />
+        </div>
+        <div class="my-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email" required value="<%= contact.email %>" />
+        </div>
+        <button type="submit" class="btn btn-warning mb-3">Ubah data</button>
+      </form>
+    </div>
+  </div>
+</div>
